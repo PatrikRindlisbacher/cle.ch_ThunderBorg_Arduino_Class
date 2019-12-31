@@ -1,12 +1,12 @@
 #include "cle_thunderborg.h"
 
-RGBLed::RGBLed (byte redPin, byte greenPin, byte bluePin) {
-	this->redPin   = redPin;
-	this->greenPin = greenPin;
-	this->bluePin  = bluePin;
-}
+//ThunderBorg::ThunderBorg1 (byte redPin, byte greenPin, byte bluePin) {
+//	this->redPin   = redPin;
+//	this->greenPin = greenPin;
+//	this->bluePin  = bluePin;
+//}
 
-void RGBLed::setRGB(byte r, byte g, byte b) {
+void ThunderBorg::setRGB(byte r, byte g, byte b) {
 	Wire.begin();
 	Wire.beginTransmission(0x15); // transmit to device 
 	Wire.write(1);              // sends one byte
@@ -17,7 +17,7 @@ void RGBLed::setRGB(byte r, byte g, byte b) {
 
 }
 
-void RGBLed::blink(char color, byte times, unsigned int ms) {
+void ThunderBorg::blink(char color, byte times, unsigned int ms) {
 	byte r=0, g=0, b=0;
 	if(color == 'r')      r = 255;
 	else if(color == 'g') g = 255;
@@ -32,7 +32,20 @@ void RGBLed::blink(char color, byte times, unsigned int ms) {
 	}
 }
 
-void RGBLed::SetLed1(byte XXX, byte r, byte g, byte b){
+void ThunderBorg::SetLedShowBattery(bool state) {
+  if (state == true) {
+    Wire.write(1);              // sends one byte
+	Wire.write(0);              // sends one byte
+	//uint8_t buf[2] = {COMMAND_SET_LED_BATT_MON, COMMAND_VALUE_ON};
+    //i2c->write_bytes(buf, 2);
+  }
+  else {
+    //uint8_t buf[2] = {COMMAND_SET_LED_BATT_MON, COMMAND_VALUE_OFF};
+    //i2c->write_bytes(buf, 2);
+  }
+}
+
+void ThunderBorg::SetLed1(byte r, byte g, byte b){
 	Wire.begin();
 	Wire.beginTransmission(0x15); // transmit to device 
 	Wire.write(1);              // sends one byte
@@ -40,4 +53,26 @@ void RGBLed::SetLed1(byte XXX, byte r, byte g, byte b){
 	Wire.write(g);              // sends one byte
 	Wire.write(b);              // sends one byte
 	Wire.endTransmission();    // stop transmitting
+}
+
+void ThunderBorg::SetMotor1(float power){
+	Wire.begin();
+	Wire.beginTransmission(0x15); // transmit to device 
+	Wire.write(1);              // sends one byte
+	Wire.write(1);              // sends one byte
+	Wire.write(1);              // sends one byte
+	Wire.write(1);              // sends one byte
+	Wire.endTransmission();    // stop transmitting	
+}
+
+
+void ThunderBorg::I2C_send_Buffer(){
+	int i;
+	Wire.begin();
+	Wire.beginTransmission(I2C_ID_THUNDERBORG); //address is queued for checking if the slave is present
+	//for (i = 0; i < sizeof(I2C_Buffer) - 1; i++){
+	//{
+	//	Wire.write(I2C_Buffer[i]);  //data bytes are queued in local buffer
+	//}
+	Wire.endTransmission(); //all the above queued bytes are sent to slave on ACK handshaking
 }

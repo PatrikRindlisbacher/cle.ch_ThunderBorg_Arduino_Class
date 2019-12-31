@@ -1,30 +1,76 @@
-#ifndef __RGB_LED__
-#define __RGB_LED__
+#ifndef __Thunder_Borg__
+#define __Thunder_Borg__
 
 #include <Arduino.h>
 #include <Wire.h>
 
-class RGBLed {
+
+// Constant Commands
+const byte COMMAND_SET_LED1				= 1;		// Set the colour of the ThunderBorg LED
+const byte COMMAND_GET_LED1				= 2;		// Get the colour of the ThunderBorg LED
+const byte COMMAND_SET_LED2				= 3;		// Set the colour of the ThunderBorg Lid LED
+const byte COMMAND_GET_LED2				= 4;		// Get the colour of the ThunderBorg Lid LED
+const byte COMMAND_SET_LEDS				= 5;		// Set the colour of both the LEDs
+const byte COMMAND_SET_LED_BATT_MON		= 6;		// Set the colour of both LEDs to show the current battery level
+const byte COMMAND_GET_LED_BATT_MON		= 7;		// Get the state of showing the current battery level via the LEDs
+const byte COMMAND_SET_A_FWD			= 8;		// Set motor A PWM rate in a forwards direction
+const byte COMMAND_SET_A_REV			= 9;		// Set motor A PWM rate in a reverse direction
+const byte COMMAND_GET_A				= 10;		// Get motor A direction and PWM rate
+const byte COMMAND_SET_B_FWD			= 11;		// Set motor B PWM rate in a forwards direction
+const byte COMMAND_SET_B_REV			= 12;		// Set motor B PWM rate in a reverse direction
+const byte COMMAND_GET_B				= 13;		// Get motor B direction and PWM rate
+const byte COMMAND_ALL_OFF				= 14;		// Switch everything off
+const byte COMMAND_GET_DRIVE_A_FAULT	= 15;		// Get the drive fault flag for motor A, indicates faults such as short-circuits and under voltage
+const byte COMMAND_GET_DRIVE_B_FAULT	= 16;		// Get the drive fault flag for motor B, indicates faults such as short-circuits and under voltage
+const byte COMMAND_SET_ALL_FWD			= 17;		// Set all motors PWM rate in a forwards direction
+const byte COMMAND_SET_ALL_REV			= 18;		// Set all motors PWM rate in a reverse direction
+const byte COMMAND_SET_FAILSAFE			= 19;		// Set the failsafe flag, turns the motors off if communication is interrupted
+const byte COMMAND_GET_FAILSAFE			= 20;		// Get the failsafe flag
+const byte COMMAND_GET_BATT_VOLT		= 21;		// Get the battery voltage reading
+const byte COMMAND_SET_BATT_LIMITS		= 22;		// Set the battery monitoring limits
+const byte COMMAND_GET_BATT_LIMITS		= 23;		// Get the battery monitoring limits
+const byte COMMAND_WRITE_EXTERNAL_LED	= 24;		// Write a 32bit pattern out to SK9822 / APA102C
+
+// Constant values
+const int I2C_SLAVE						= 0x0703;	// 
+const byte PWM_MAX						= 255;		// Maximum Wert für PWM
+const byte I2C_MAX_LEN					= 6;		// Definiert die maximale Länge eines Telegramms
+const float VOLTAGE_PIN_MAX				= 36.3;		// Maximum voltage from the analog voltage monitoring pin
+const float VOLTAGE_PIN_CORRECTION		= 0.0;		// Correction value for the analog voltage monitoring pin
+const float BATTERY_MIN_DEFAULT			= 7.0;		// Default minimum battery monitoring voltage
+const float BATTERY_MAX_DEFAULT			= 35.0;		// Default maximum battery monitoring voltage
+const byte I2C_ID_THUNDERBORG			= 0x15;		// Standard I2C Adresse vom Thunderborg Board
+const byte COMMAND_GET_ID				= 0x99;		// Get the board identifier
+const byte COMMAND_SET_I2C_ADD			= 0xAA;		// Set a new I2C address
+const byte COMMAND_VALUE_FWD			= 1;		// I2C value representing forward
+const byte COMMAND_VALUE_REV			= 2;		// I2C value representing reverse
+const byte COMMAND_VALUE_ON				= 1;		// I2C value representing on
+const byte COMMAND_VALUE_OFF			= 0;		// I2C value representing off
+const int COMMAND_ANALOG_MAX			= 0x3FF;	// Maximum value for analog readings
+
+class ThunderBorg {
 private:
 	byte redPin;
 	byte greenPin;
 	byte bluePin;
+	byte I2C_Buffer[];
+	void I2C_send_Buffer();
 
 public:
 	RGBLed (byte redPin, byte greenPin, byte bluePin);
 	//void Init(I2C *i2c);
-	//void SetLedShowBattery(I2C *i2c, bool state);
-	void SetLed1(byte XXX, byte r, byte g, byte b);
+	void SetLedShowBattery(bool state);
+	void SetLed1(byte r, byte g, byte b);
 	//void SetNewAddress(I2C *i2c, uint8_t newAddress);
+	void SetMotor1(float power);
+	//float GetMotor1(I2C *i2c);
 	//void SetMotor2(I2C *i2c, float power);
 	//float GetMotor2(I2C *i2c);
-	//void SetMotor1(I2C *i2c, float power);
-	//float GetMotor1(I2C *i2c);
+
 	//float GetBatteryReading(I2C *i2c);
 
 
 	void setRGB(byte r, byte g, byte b) ;
 	void blink(char color, byte times, unsigned int ms);
 };
-
 #endif
