@@ -7,12 +7,20 @@ ThunderBorg TBC1;
 void setup() {}
 
 void loop() {
-  TBC1.SetMotor1(50);
-  delay(500);
-  TBC1.SetMotor1(100);
-  delay(500);
-    TBC1.SetMotor1(0);
-  delay(500);
-  
+	TBC1.SetMotor1(50);
+	delay(500);
+	TBC1.SetMotor1(100);
+	delay(500);
+	TBC1.SetMotor1(150);
+	delay(500);
+	TBC1.SetMotor1(200);
+	delay(500);
+	TBC1.SetMotor1(255);
+	delay(2000);
+	TBC1.SetMotor1(150);
+	delay(1000);
+	TBC1.SetMotor1(80);
+	delay(1000);
+	
 
 }
