@@ -5,9 +5,13 @@ News: Die erste minimale Version läuft einwandfrei. Anfragen oder Tipps gerne v
 
 For the ThunderBorg exist only a Raspberry Pi Class
 
-Ich suche Leute die mithelfen möchten diesen genialen Motoren Controller auch mit Arduino zu betreiben.
+Ich suche Leute die mithelfen möchten, diesen genialen Thunderborg
+Motoren Controller, mit Arduino zu betreiben.
 
 Die I2C Doku für Python vom Hersteller findet man unter folgendem Link:
 https://www.piborg.org/blog/build/thunderborg-build/thunderborg-examples#api
 
 Ziel ist es die Funktionen 1:1 auf Arduino zu übersetzten.
+
+Eine Anleitung folgt sobald das Projekt weiter fortgeschritten ist.
+Freue mich auf eure Mitarbeit.
