@@ -33,13 +33,12 @@ const byte COMMAND_WRITE_EXTERNAL_LED	= 24;		// Write a 32bit pattern out to SK9
 
 // Constant values
 const int I2C_SLAVE						= 0x0703;	// 
-const byte PWM_MAX						= 255;		// Maximum Wert für PWM
-const byte I2C_MAX_LEN					= 6;		// Definiert die maximale Länge eines Telegramms
 const float VOLTAGE_PIN_MAX				= 36.3;		// Maximum voltage from the analog voltage monitoring pin
 const float VOLTAGE_PIN_CORRECTION		= 0.0;		// Correction value for the analog voltage monitoring pin
 const float BATTERY_MIN_DEFAULT			= 7.0;		// Default minimum battery monitoring voltage
 const float BATTERY_MAX_DEFAULT			= 35.0;		// Default maximum battery monitoring voltage
 const byte I2C_ID_THUNDERBORG			= 0x15;		// Standard I2C Adresse vom Thunderborg Board
+const byte I2C_MAX_LEN					= 6;		// Definiert die maximale Länge eines Telegramms
 const byte COMMAND_GET_ID				= 0x99;		// Get the board identifier
 const byte COMMAND_SET_I2C_ADD			= 0xAA;		// Set a new I2C address
 const byte COMMAND_VALUE_FWD			= 1;		// I2C value representing forward
@@ -47,6 +46,7 @@ const byte COMMAND_VALUE_REV			= 2;		// I2C value representing reverse
 const byte COMMAND_VALUE_ON				= 1;		// I2C value representing on
 const byte COMMAND_VALUE_OFF			= 0;		// I2C value representing off
 const int COMMAND_ANALOG_MAX			= 0x3FF;	// Maximum value for analog readings
+const byte PWM_MAX						= 255;		// Maximum Wert für PWM
 
 class ThunderBorg {
 private:
@@ -62,14 +62,11 @@ public:
 	void SetLedShowBattery(bool state);
 	void SetLed1(byte r, byte g, byte b);
 	//void SetNewAddress(I2C *i2c, uint8_t newAddress);
-	void SetMotor1(float power);
+	void SetMotor1(byte power);
 	//float GetMotor1(I2C *i2c);
 	//void SetMotor2(I2C *i2c, float power);
 	//float GetMotor2(I2C *i2c);
-
 	//float GetBatteryReading(I2C *i2c);
-
-
 	void setRGB(byte r, byte g, byte b) ;
 	void blink(char color, byte times, unsigned int ms);
 };

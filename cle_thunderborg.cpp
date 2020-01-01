@@ -55,13 +55,36 @@ void ThunderBorg::SetLed1(byte r, byte g, byte b){
 	Wire.endTransmission();    // stop transmitting
 }
 
-void ThunderBorg::SetMotor1(float power){
+void ThunderBorg::SetMotor1(byte power){
+
+
+
+  //uint8_t command, pwm;
+  //if (power < 0.0) {
+  //  command = COMMAND_SET_A_REV;
+  //  pwm = -((int) (((float) PWM_MAX) * power));
+  //  if (pwm > PWM_MAX) {
+  //    pwm = PWM_MAX;
+  //  }
+  //}
+  //else {
+  //  command = COMMAND_SET_A_FWD;
+  //  pwm = (int) (((float) PWM_MAX) * power);
+  //  if (pwm > PWM_MAX) {
+  //    pwm = PWM_MAX;
+  //  }
+  //}
+  //uint8_t buf[] = {command, pwm};
+  //i2c->write_bytes(buf, sizeof(buf) / sizeof(uint8_t));
+
+
+
+
+
 	Wire.begin();
 	Wire.beginTransmission(0x15); // transmit to device 
-	Wire.write(1);              // sends one byte
-	Wire.write(1);              // sends one byte
-	Wire.write(1);              // sends one byte
-	Wire.write(1);              // sends one byte
+	Wire.write(8);              // sends one byte
+	Wire.write(power);              // sends one byte
 	Wire.endTransmission();    // stop transmitting	
 }
 

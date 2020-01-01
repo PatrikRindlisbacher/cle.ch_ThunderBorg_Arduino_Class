@@ -7,11 +7,11 @@ ThunderBorg TBC1;
 void setup() {}
 
 void loop() {
-  TBC1.setRGB(100,0,0);
+  TBC1.SetMotor1(50);
   delay(500);
-  TBC1.setRGB(0,100,0);
+  TBC1.SetMotor1(100);
   delay(500);
-    TBC1.setRGB(0,0,100);
+    TBC1.SetMotor1(0);
   delay(500);
   
 
