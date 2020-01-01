@@ -13,12 +13,12 @@ const byte COMMAND_GET_LED2				= 4;		// Get the colour of the ThunderBorg Lid LE
 const byte COMMAND_SET_LEDS				= 5;		// Set the colour of both the LEDs
 const byte COMMAND_SET_LED_BATT_MON		= 6;		// Set the colour of both LEDs to show the current battery level
 const byte COMMAND_GET_LED_BATT_MON		= 7;		// Get the state of showing the current battery level via the LEDs
-const byte COMMAND_SET_A_FWD			= 8;		// Set motor A PWM rate in a forwards direction
-const byte COMMAND_SET_A_REV			= 9;		// Set motor A PWM rate in a reverse direction
-const byte COMMAND_GET_A				= 10;		// Get motor A direction and PWM rate
-const byte COMMAND_SET_B_FWD			= 11;		// Set motor B PWM rate in a forwards direction
-const byte COMMAND_SET_B_REV			= 12;		// Set motor B PWM rate in a reverse direction
-const byte COMMAND_GET_B				= 13;		// Get motor B direction and PWM rate
+const byte COMMAND_SET_M1_FWD			= 8;		// Set motor A PWM rate in a forwards direction
+const byte COMMAND_SET_M1_REV			= 9;		// Set motor A PWM rate in a reverse direction
+const byte COMMAND_GET_M1				= 10;		// Get motor A direction and PWM rate
+const byte COMMAND_SET_M2_FWD			= 11;		// Set motor B PWM rate in a forwards direction
+const byte COMMAND_SET_M2_REV			= 12;		// Set motor B PWM rate in a reverse direction
+const byte COMMAND_GET_M2				= 13;		// Get motor B direction and PWM rate
 const byte COMMAND_ALL_OFF				= 14;		// Switch everything off
 const byte COMMAND_GET_DRIVE_A_FAULT	= 15;		// Get the drive fault flag for motor A, indicates faults such as short-circuits and under voltage
 const byte COMMAND_GET_DRIVE_B_FAULT	= 16;		// Get the drive fault flag for motor B, indicates faults such as short-circuits and under voltage
@@ -62,9 +62,11 @@ public:
 	void SetLedShowBattery(bool state);
 	void SetLed1(byte r, byte g, byte b);
 	//void SetNewAddress(I2C *i2c, uint8_t newAddress);
-	void SetMotor1(byte power);
+	void SetMotor1FWD(byte power);
+	void SetMotor1REV(byte power);
 	//float GetMotor1(I2C *i2c);
-	void SetMotor2(byte power);
+	void SetMotor2FWD(byte power);
+	void SetMotor2REV(byte power);
 	//float GetMotor2(I2C *i2c);
 	//float GetBatteryReading(I2C *i2c);
 	void setRGB(byte r, byte g, byte b) ;
