@@ -7,6 +7,7 @@ ThunderBorg TBC1;
 void setup() {}
 
 void loop() {
+  TBC1.SetLedShowBattery(false);
   TBC1.setRGB(100,0,0);
   delay(500);
   TBC1.setRGB(0,100,0);

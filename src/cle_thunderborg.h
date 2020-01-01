@@ -64,7 +64,7 @@ public:
 	//void SetNewAddress(I2C *i2c, uint8_t newAddress);
 	void SetMotor1(byte power);
 	//float GetMotor1(I2C *i2c);
-	//void SetMotor2(I2C *i2c, float power);
+	void SetMotor2(byte power);
 	//float GetMotor2(I2C *i2c);
 	//float GetBatteryReading(I2C *i2c);
 	void setRGB(byte r, byte g, byte b) ;
