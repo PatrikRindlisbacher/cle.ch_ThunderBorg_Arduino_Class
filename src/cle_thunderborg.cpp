@@ -8,7 +8,6 @@ void ThunderBorg::setRGB(byte r, byte g, byte b) {
 	Wire.write(g);									// sends one byte
 	Wire.write(b);									// sends one byte
 	Wire.endTransmission();							// stop transmitting
-
 }
 
 void ThunderBorg::blink(char color, byte times, unsigned int ms) {
@@ -42,7 +41,7 @@ void ThunderBorg::SetLedShowBattery(bool state) {
 
 void ThunderBorg::SetLed1(byte r, byte g, byte b){
 	Wire.begin();
-	Wire.beginTransmission(I2C_ID_THUNDERBORG); // transmit to device 
+	Wire.beginTransmission(I2C_ID_THUNDERBORG); // begin transmit to device 
 	Wire.write(COMMAND_SET_LED1);				// sends one byte
 	Wire.write(r);								// sends one byte
 	Wire.write(g);								// sends one byte
@@ -52,15 +51,15 @@ void ThunderBorg::SetLed1(byte r, byte g, byte b){
 
 void ThunderBorg::SetMotor1FWD(byte power){
 	Wire.begin();
-	Wire.beginTransmission(I2C_ID_THUNDERBORG);	// transmit to device 
-	Wire.write(COMMAND_SET_M1_FWD);				// sends one byte
-	Wire.write(power);							// sends one byte
+	Wire.beginTransmission(I2C_ID_THUNDERBORG);	// begin transmit to device 
+	Wire.write(COMMAND_SET_M1_FWD);				// send Byte COMMAND
+	Wire.write(power);							// send Byte power
 	Wire.endTransmission();						// stop transmitting	
 }
 
 void ThunderBorg::SetMotor1REV(byte power){
 	Wire.begin();
-	Wire.beginTransmission(I2C_ID_THUNDERBORG);	// transmit to device 
+	Wire.beginTransmission(I2C_ID_THUNDERBORG);	// begin transmit to device 
 	Wire.write(COMMAND_SET_M1_REV);				// sends one byte
 	Wire.write(power);							// sends one byte
 	Wire.endTransmission();						// stop transmitting	

@@ -4,7 +4,6 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-
 // Constant Commands
 const byte COMMAND_SET_LED1				= 1;		// Set the colour of the ThunderBorg LED
 const byte COMMAND_GET_LED1				= 2;		// Get the colour of the ThunderBorg LED
@@ -50,10 +49,7 @@ const byte PWM_MAX						= 255;		// Maximum Wert für PWM
 
 class ThunderBorg {
 private:
-	byte redPin;
-	byte greenPin;
-	byte bluePin;
-	byte I2C_Buffer[];
+	//byte I2C_Buffer[];
 	void I2C_send_Buffer();
 
 public:
