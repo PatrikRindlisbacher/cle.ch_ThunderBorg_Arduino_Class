@@ -14,5 +14,5 @@ https://www.piborg.org/blog/build/thunderborg-build/thunderborg-examples#api
 
 Ziel ist es die Funktionen 1:1 auf Arduino zu übersetzten.
 
-Eine Anleitung folgt sobald das Projekt weiter fortgeschritten ist.
+Eine Anleitung folgt sobald das Projekt weiter fortgeschritten ist. --> Im Wiki ist schon mal ein Quick Start drin.
 Freue mich auf eure Mitarbeit.
