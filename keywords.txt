@@ -1,3 +1,8 @@
-RGBLed	KEYWORD1
-setRGB	KEYWORD1
-blink	KEYWORD1
+# Datentypen und Klassen = KEYWORD1
+# Methoden und Funktionen = KEYWORD2
+# Konstanten  = LITERAL1
+
+
+ThunderBorg	KEYWORD1
+SetMotor1FWD	KEYWORD2
+SetMotor1REV	KEYWORD2
