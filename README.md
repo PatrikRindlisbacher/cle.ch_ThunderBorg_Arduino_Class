@@ -1,7 +1,9 @@
 # ThunderBorgArduinoClass
 Thunderborg Dual 5A DC Motor Controller PiBorg Arduino Class
 
-News: Die erste minimale Version läuft einwandfrei. <b>Anfragen oder Tipps gerne via "Issues" senden.</b>
+News: Die erste minimale Version läuft einwandfrei. 
+
+<b>Anfragen oder Tipps gerne via "Issues" senden.</b>
 oder im Forum https://www.arduinoforum.de/arduino-Thread-Thunderborg-Motor-Controller-5A-Bibliothek-f%C3%BCr-Arduino
 
 For the ThunderBorg exist only a Raspberry Pi Class
