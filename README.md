@@ -19,6 +19,3 @@ Ziel ist es die Funktionen 1:1 auf Arduino zu übersetzten.
 Eine Anleitung folgt sobald das Projekt weiter fortgeschritten ist. --> Im Wiki ist schon mal ein Quick Start drin.
 
 Freue mich auf eure Mitarbeit.
-
-Anfragen, Lob oder konstuktive Kritik, oder Tipps gerne via "Issues" senden. 
-oder im Forum https://www.arduinoforum.de/arduino-Thread-Thunderborg-Motor-Controller-5A-Bibliothek-f%C3%BCr-Arduino
