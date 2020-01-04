@@ -3,6 +3,7 @@ Ziel ist es bis Ende 01/2020 eine perfekte Bibliothek zu erstellen.
 Freue mich über Feedbacks an pr@cle.ch
 
 
+05.01.2020	examples\Test_Motor_1 benötigt 2534 Bytes Speicher im Arduino
 05.01.2020	Entscheidung Library so schlank wie möglich gestalten. (Keine unnötigen Luxus Funktionen)
 05.01.2020	Bereinigung von Altlasten
 01.01.2020	Überarbeitung der Funktionen
