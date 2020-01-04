@@ -53,11 +53,11 @@ private:
 	void I2C_send_Buffer();
 
 public:
-	RGBLed (byte redPin, byte greenPin, byte bluePin);
 	//void Init(I2C *i2c);
+	//void SetNewAddress(I2C *i2c, uint8_t newAddress);
 	void SetLedShowBattery(bool state);
 	void SetLed1(byte r, byte g, byte b);
-	//void SetNewAddress(I2C *i2c, uint8_t newAddress);
+	//void SetMotors()
 	void SetMotor1FWD(byte power);
 	void SetMotor1REV(byte power);
 	//float GetMotor1(I2C *i2c);
@@ -65,7 +65,5 @@ public:
 	void SetMotor2REV(byte power);
 	//float GetMotor2(I2C *i2c);
 	//float GetBatteryReading(I2C *i2c);
-	void setRGB(byte r, byte g, byte b) ;
-	void blink(char color, byte times, unsigned int ms);
 };
 #endif
