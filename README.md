@@ -19,3 +19,5 @@ Ziel ist es die Funktionen so funktional wie möglich auf Arduino zu übersetzte
 Eine Anleitung folgt sobald das Projekt weiter fortgeschritten ist. --> Im Wiki ist schon mal ein Quick Start drin.
 
 Freue mich auf eure Mitarbeit.
+
+Gesamtes Projekt:  http://www.cle.ch/index.php/entwicklungen/35-robi-car-selbstfahrender-lager-roboter-wagen.html
