@@ -1,17 +1,12 @@
 #include "cle_thunderborg.h"
 
 void ThunderBorg::SetLedShowBattery(bool state) {
-	Wire.begin();
-	Wire.beginTransmission(I2C_ID_THUNDERBORG); // transmit to device 
 	if (state == true) {
-		Wire.write(COMMAND_SET_LED_BATT_MON);		// sends one byte
-		Wire.write(COMMAND_VALUE_ON);				// sends one byte
+		SendCommand(COMMAND_SET_LED_BATT_MON,1,COMMAND_VALUE_ON,0,0);
 	}
 	else {
-		Wire.write(COMMAND_SET_LED_BATT_MON);		// sends one byte
-		Wire.write(COMMAND_VALUE_OFF);				// sends one byte
+		SendCommand(COMMAND_SET_LED_BATT_MON,1,COMMAND_VALUE_OFF,0,0);
 	}
-	Wire.endTransmission();						// stop transmitting
 }
 
 void ThunderBorg::SetLed1(byte r, byte g, byte b){
@@ -31,7 +26,6 @@ void ThunderBorg::SetMotor2FWD(byte power){
 }
 void ThunderBorg::SetMotor2REV(byte power){
 	SendCommand(COMMAND_SET_M2_FWD,1,power,0,0);
-
 }
 
 void ThunderBorg::SendCommand(byte Command, byte number_of_Values, byte Value1, byte Value2, byte Value3){
