@@ -14,7 +14,7 @@ Motoren Controller, mit Arduino zu betreiben.
 Die I2C Doku für Python vom Hersteller findet man unter folgendem Link:
 https://www.piborg.org/blog/build/thunderborg-build/thunderborg-examples#api
 
-Ziel ist es die Funktionen 1:1 auf Arduino zu übersetzten.
+Ziel ist es die Funktionen so funktional wie möglich auf Arduino zu übersetzten.
 
 Eine Anleitung folgt sobald das Projekt weiter fortgeschritten ist. --> Im Wiki ist schon mal ein Quick Start drin.
 
