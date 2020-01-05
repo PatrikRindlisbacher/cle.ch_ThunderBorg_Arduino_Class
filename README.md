@@ -1,5 +1,5 @@
 # ThunderBorgArduinoClass
-Thunderborg Dual 5A DC Motor Controller PiBorg Arduino Class
+Thunderborg I2C Dual 5A DC Motor Controller von PiBorg Arduino Class
 
 News: Die erste minimale Version läuft einwandfrei. 
 
