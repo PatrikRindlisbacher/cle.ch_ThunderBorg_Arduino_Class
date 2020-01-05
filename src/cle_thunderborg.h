@@ -49,9 +49,10 @@ const byte PWM_MAX						= 255;		// Maximum Wert für PWM
 
 class ThunderBorg {
 private:
+	byte I2C_ID_THUNDERBORG_Current;				// Current I2C Adresse
 	//byte I2C_Buffer[];
 	void I2C_send_Buffer();
-
+	void SendCommand(byte Command, byte number_of_Values, byte Value1, byte Value2, byte Value3);
 public:
 	void Init(byte I2C_Adress);
 	//void SetNewAddress(I2C *i2c, uint8_t newAddress);
@@ -65,6 +66,5 @@ public:
 	void SetMotor2REV(byte power);
 	//float GetMotor2(I2C *i2c);
 	//float GetBatteryReading(I2C *i2c);
-	void SendCommand(byte Command, byte number_of_Values, byte Value1, byte Value2, byte Value3);
 };
 #endif

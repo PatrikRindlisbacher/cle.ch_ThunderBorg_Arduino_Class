@@ -2,6 +2,7 @@ Dieses Projekt ist noch ganz frisch.
 Ziel ist es bis Ende 01/2020 eine perfekte Bibliothek zu erstellen.
 Freue mich über Feedbacks an pr@cle.ch
 
+05.01.2020  New Variable I2C_ID_THUNDERBORG_Current 
 05.01.2020	1. Version mit Init --> Stoppt alle Motoren beim initialisieren, falls noch laufen
 05.01.2020	SetLedShowBattery an neue SendCommand anpassen (weniger Code)
 05.01.2020	SendCommand erweitern für 3 Values
