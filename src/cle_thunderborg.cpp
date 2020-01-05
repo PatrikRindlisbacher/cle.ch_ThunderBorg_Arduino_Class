@@ -1,5 +1,10 @@
 #include "cle_thunderborg.h"
 
+void ThunderBorg::Init(byte I2C_Adress) {
+	SendCommand(COMMAND_SET_LED_BATT_MON,1,COMMAND_VALUE_ON,0,0);		// LED Battery Status ON
+	SendCommand(COMMAND_ALL_OFF,0,0,0,0);								// All Motor Stop
+}
+
 void ThunderBorg::SetLedShowBattery(bool state) {
 	if (state == true) {
 		SendCommand(COMMAND_SET_LED_BATT_MON,1,COMMAND_VALUE_ON,0,0);

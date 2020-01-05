@@ -3,7 +3,9 @@
 ThunderBorg TBC1;
 
 
-void setup() {}
+void setup() {
+	TBC1.Init(0x15);						// Intit Thunderborg
+}
 
 void loop() {
   TBC1.SetLedShowBattery(false);

@@ -4,7 +4,9 @@ ThunderBorg TBC1;							// Klasse initialisieren als TBC1
 // Anregungen gerne im Github als Fragen (issues) oder per Mail an pr@cle.ch
 
 
-void setup() {}
+void setup() {
+	TBC1.Init(0x15);
+}
 
 void loop() {
 	TBC1.SetMotor1FWD(50);					// Motor 1 vorwärts

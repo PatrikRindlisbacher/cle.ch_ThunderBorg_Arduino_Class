@@ -53,7 +53,7 @@ private:
 	void I2C_send_Buffer();
 
 public:
-	//void Init(I2C *i2c);
+	void Init(byte I2C_Adress);
 	//void SetNewAddress(I2C *i2c, uint8_t newAddress);
 	void SetLedShowBattery(bool state);
 	void SetLed1(byte r, byte g, byte b);
