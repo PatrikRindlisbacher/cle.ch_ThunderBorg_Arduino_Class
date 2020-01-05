@@ -65,6 +65,6 @@ public:
 	void SetMotor2REV(byte power);
 	//float GetMotor2(I2C *i2c);
 	//float GetBatteryReading(I2C *i2c);
-	void SendCommand(byte Command, byte Value1, byte Value2);
+	void SendCommand(byte Command, byte number_of_Values, byte Value1, byte Value2, byte Value3);
 };
 #endif
