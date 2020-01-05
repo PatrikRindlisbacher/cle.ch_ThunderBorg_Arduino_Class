@@ -5,7 +5,7 @@ ThunderBorg TBC1;							// Klasse initialisieren als TBC1
 
 
 void setup() {
-	TBC1.Init(0x15);
+	TBC1.Init(0x15);						// Intit Thunderborg
 }
 
 void loop() {

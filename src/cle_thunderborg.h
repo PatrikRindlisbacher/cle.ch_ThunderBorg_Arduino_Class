@@ -37,7 +37,6 @@ const int I2C_SLAVE						= 0x0703;	//
 //const float BATTERY_MIN_DEFAULT			= 7.0;		// Default minimum battery monitoring voltage
 //const float BATTERY_MAX_DEFAULT			= 35.0;		// Default maximum battery monitoring voltage
 const byte I2C_ID_THUNDERBORG			= 0x15;		// Standard I2C Adresse vom Thunderborg Board
-const byte I2C_MAX_LEN					= 6;		// Definiert die maximale Länge eines Telegramms
 const byte COMMAND_GET_ID				= 0x99;		// Get the board identifier
 const byte COMMAND_SET_I2C_ADD			= 0xAA;		// Set a new I2C address
 const byte COMMAND_VALUE_FWD			= 1;		// I2C value representing forward
@@ -58,7 +57,7 @@ public:
 	//void SetNewAddress(I2C *i2c, uint8_t newAddress);
 	void SetLedShowBattery(bool state);
 	void SetLed1(byte r, byte g, byte b);
-	//void SetMotors()
+	void SetMotors(byte M1_Direction, byte M1_Power, byte M2_Direction, byte M2_Power);
 	void SetMotor1FWD(byte power);
 	void SetMotor1REV(byte power);
 	//float GetMotor1(I2C *i2c);
