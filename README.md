@@ -1,7 +1,7 @@
 # ThunderBorgArduinoClass
 Thunderborg I2C Dual 5A DC Motor Controller von PiBorg Arduino Class
 
-News: Die erste minimale Version läuft einwandfrei. 
+News: Neue und Verbesserte Funktionen. Bsp. Batterie Überwachung mit LED !!!!! 
 
 <b>Anfragen, Lob oder konstuktive Kritik, oder Tipps gerne via "Issues" senden.</b>
 oder im Forum https://www.arduinoforum.de/arduino-Thread-Thunderborg-Motor-Controller-5A-Bibliothek-f%C3%BCr-Arduino
