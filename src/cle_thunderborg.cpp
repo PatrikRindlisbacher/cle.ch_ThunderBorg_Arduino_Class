@@ -6,10 +6,19 @@ void ThunderBorg::Init(byte I2C_Adress) {
 	SendCommand(COMMAND_ALL_OFF,0,0,0,0);								// All Motors Stop
 }
 
-void ThunderBorg::SetLedShowBattery(bool state) {
+void ThunderBorg::SetLedShowBattery(bool state, float SET_BATTERY_MIN = BATTERY_MIN_DEFAULT , float SET_BATTERY_Max = BATTERY_MAX_DEFAULT) {
 	if (state == true) {
 		SendCommand(COMMAND_SET_LED_BATT_MON,1,COMMAND_VALUE_ON,0,0);
-	}
+		
+
+        LED_Level_Battery_State_Min = 255 * (SET_BATTERY_MIN / float(VOLTAGE_PIN_MAX));
+        LED_Level_Battery_State_Max = 255 * (SET_BATTERY_Max / float(VOLTAGE_PIN_MAX));
+        //LED_Level_Battery_State_Min = byte(LED_Level_Battery_State_Min * 0xFF);
+        //LED_Level_Battery_State_Max = byte(LED_Level_Battery_State_Max * 0xFF);
+		//LED_Level_Battery_State_Min = 50;
+		//LED_Level_Battery_State_Max = 72;
+		SendCommand(COMMAND_SET_BATT_LIMITS,2,LED_Level_Battery_State_Min,LED_Level_Battery_State_Max,0);
+		}
 	else {
 		SendCommand(COMMAND_SET_LED_BATT_MON,1,COMMAND_VALUE_OFF,0,0);
 	}

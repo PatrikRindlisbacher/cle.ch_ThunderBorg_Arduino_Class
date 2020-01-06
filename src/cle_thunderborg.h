@@ -26,16 +26,16 @@ const byte COMMAND_ALL_OFF				= 14;		// Switch everything off
 //const byte COMMAND_SET_FAILSAFE			= 19;		// Set the failsafe flag, turns the motors off if communication is interrupted
 //const byte COMMAND_GET_FAILSAFE			= 20;		// Get the failsafe flag
 //const byte COMMAND_GET_BATT_VOLT		= 21;		// Get the battery voltage reading
-//const byte COMMAND_SET_BATT_LIMITS		= 22;		// Set the battery monitoring limits
+const byte COMMAND_SET_BATT_LIMITS		= 22;		// Set the battery monitoring limits
 //const byte COMMAND_GET_BATT_LIMITS		= 23;		// Get the battery monitoring limits
 //const byte COMMAND_WRITE_EXTERNAL_LED	= 24;		// Write a 32bit pattern out to SK9822 / APA102C
 
 // Constant values
 const int I2C_SLAVE						= 0x0703;	// 
-//const float VOLTAGE_PIN_MAX				= 36.3;		// Maximum voltage from the analog voltage monitoring pin
+const float VOLTAGE_PIN_MAX				= 36.3;		// Maximum voltage from the analog voltage monitoring pin
 //const float VOLTAGE_PIN_CORRECTION		= 0.0;		// Correction value for the analog voltage monitoring pin
-//const float BATTERY_MIN_DEFAULT			= 7.0;		// Default minimum battery monitoring voltage
-//const float BATTERY_MAX_DEFAULT			= 35.0;		// Default maximum battery monitoring voltage
+const float BATTERY_MIN_DEFAULT			= 7.0;		// Default minimum battery monitoring voltage
+const float BATTERY_MAX_DEFAULT			= 35.0;		// Default maximum battery monitoring voltage
 const byte I2C_ID_THUNDERBORG			= 0x15;		// Standard I2C Adresse vom Thunderborg Board
 const byte COMMAND_GET_ID				= 0x99;		// Get the board identifier
 const byte COMMAND_SET_I2C_ADD			= 0xAA;		// Set a new I2C address
@@ -50,12 +50,14 @@ class ThunderBorg {
 private:
 	byte I2C_ID_THUNDERBORG_Current;				// Current I2C Adresse
 	//byte I2C_Buffer[];
+	byte LED_Level_Battery_State_Min;				// Minimum Level for LED Battery_State --> Color RED
+	byte LED_Level_Battery_State_Max;				// Maximum Level for LED Battery_State --> Color Green
 	void I2C_send_Buffer();
 	void SendCommand(byte Command, byte number_of_Values, byte Value1, byte Value2, byte Value3);
 public:
 	void Init(byte I2C_Adress);
 	//void SetNewAddress(I2C *i2c, uint8_t newAddress);
-	void SetLedShowBattery(bool state);
+	void SetLedShowBattery(bool state, float SET_BATTERY_MIN = BATTERY_MIN_DEFAULT , float SET_BATTERY_Max = BATTERY_MAX_DEFAULT);
 	void SetLed1(byte r, byte g, byte b);
 	void SetMotors(int M1_Power, int M2_Power);
 	void SetMotor1FWD(byte power);
