@@ -1,4 +1,5 @@
-# Thunderborg I2C Dual 35V 2x5A DC Motor Controller von PiBorg Arduino Class
+# Thunderborg Dual 35V 2x5A DC-Motor I2C Controller Arduino Class
+von PiBorg
 
 ![Bild](https://user-images.githubusercontent.com/39780457/71647295-f149a800-2cf4-11ea-9848-ffe07bf04579.png)
 
