@@ -1,11 +1,17 @@
 # Datentypen und Klassen = KEYWORD1
-# Methoden und Funktionen = KEYWORD2
-# Konstanten  = LITERAL1
-
-
 ThunderBorg	KEYWORD1
+
+# Methoden und Funktionen = KEYWORD2
 Init	KEYWORD2
 SetMotor1FWD	KEYWORD2
 SetMotor1REV	KEYWORD2
 SetMotor2FWD	KEYWORD2
 SetMotor2REV	KEYWORD2
+SetMotors	KEYWORD2
+SetLedShowBattery	KEYWORD2
+SetLed1	KEYWORD2
+
+# Konstanten  = LITERAL1
+
+
+
