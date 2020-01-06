@@ -1,5 +1,5 @@
 # ThunderBorgArduinoClass
-Thunderborg I2C Dual 5A DC Motor Controller von PiBorg Arduino Class
+Thunderborg I2C Dual 35V 2x5A DC Motor Controller von PiBorg Arduino Class
 
 News: Neue und Verbesserte Funktionen. Bsp. Batterie Überwachung mit LED !!!!! 
 
