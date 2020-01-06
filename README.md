@@ -1,5 +1,5 @@
 # ThunderBorgArduinoClass
-https://user-images.githubusercontent.com/39780457/71647295-f149a800-2cf4-11ea-9848-ffe07bf04579.png
+![Bild](https://user-images.githubusercontent.com/39780457/71647295-f149a800-2cf4-11ea-9848-ffe07bf04579.png)
 Thunderborg I2C Dual 35V 2x5A DC Motor Controller von PiBorg Arduino Class
 
 News: Neue und Verbesserte Funktionen. Bsp. Batterie Überwachung mit LED !!!!! 
@@ -19,7 +19,7 @@ Ziel ist es die Funktionen so funktional wie möglich auf Arduino zu übersetzte
 
 Eine Anleitung folgt sobald das Projekt weiter fortgeschritten ist. --> Im Wiki ist schon mal ein Quick Start drin.
 
-Freue mich auf eure Mitarbeit.
+#Freue mich auf eure Mitarbeit.
 
 Mein gesamtes Projekt:  http://www.cle.ch/index.php/entwicklungen/35-robi-car-selbstfahrender-lager-roboter-wagen.html
 
