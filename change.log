@@ -2,6 +2,8 @@ Dieses Projekt ist noch ganz frisch.
 Ziel ist es bis Ende 01/2020 eine perfekte Bibliothek zu erstellen.
 Freue mich über Feedbacks an pr@cle.ch
 
+06.01.2019	Neues Examples Linear Beschleunigung "Set_Motors_Linear_Power"
+06.01.2019	SetMotors ohne Direction --> neu mit "int Variable" -255 - 0 - 255
 05.01.2020	New Function SetMotors for control both Motors
 05.01.2020  New Variable I2C_ID_THUNDERBORG_Current 
 05.01.2020	1. Version mit Init --> Stoppt alle Motoren beim initialisieren, falls noch laufen

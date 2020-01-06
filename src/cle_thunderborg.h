@@ -57,7 +57,7 @@ public:
 	//void SetNewAddress(I2C *i2c, uint8_t newAddress);
 	void SetLedShowBattery(bool state);
 	void SetLed1(byte r, byte g, byte b);
-	void SetMotors(byte M1_Direction, byte M1_Power, byte M2_Direction, byte M2_Power);
+	void SetMotors(int M1_Power, int M2_Power);
 	void SetMotor1FWD(byte power);
 	void SetMotor1REV(byte power);
 	//float GetMotor1(I2C *i2c);

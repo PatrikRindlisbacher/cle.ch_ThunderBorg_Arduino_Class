@@ -19,12 +19,12 @@ void ThunderBorg::SetLed1(byte r, byte g, byte b){
 	SendCommand(COMMAND_SET_LED1,3,r,g,b);								// SET LED RGB
 }
 
-void ThunderBorg::SetMotors(byte M1_Direction, byte M1_Power, byte M2_Direction, byte M2_Power){
-	if (M1_Direction==0 and M2_Direction==0){SendCommand(COMMAND_ALL_OFF,0,0,0,0);}
-	if (M1_Direction==1 ){SetMotor1FWD(M1_Power);}	
-	if (M2_Direction==1 ){SetMotor2FWD(M2_Power);}	
-	if (M1_Direction==2 ){SetMotor1REV(M1_Power);}	
-	if (M2_Direction==2 ){SetMotor2REV(M2_Power);}	
+void ThunderBorg::SetMotors(int M1_Power, int M2_Power){
+	if (M1_Power==0 and M1_Power==0){SendCommand(COMMAND_ALL_OFF,0,0,0,0);}
+	if (M1_Power>0 ){SetMotor1FWD(byte(M1_Power));}	
+	if (M2_Power>0 ){SetMotor2FWD(byte(M2_Power));}	
+	if (M1_Power<0 ){SetMotor1REV(byte(M1_Power*-1));}	
+	if (M2_Power<0 ){SetMotor2REV(byte(M2_Power*-1));}	
 }
 
 
